@@ -22,7 +22,21 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
+	switch (interfaceOrientation) {
+		case UIInterfaceOrientationLandscapeRight:
+			return NO;
+			break;
+		case UIInterfaceOrientationLandscapeLeft:
+			return NO;
+			break;
+		case UIInterfaceOrientationPortraitUpsideDown:
+			return NO;
+			break;
+		default:
+			break;
+	}
+
+	return NO;
 }
 
 - (void)setupLabels
