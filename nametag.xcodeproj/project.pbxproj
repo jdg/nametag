@@ -20,7 +20,13 @@
 		AB06332B0E67083900189B09 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB06332A0E67083900189B09 /* SettingsView.xib */; };
 		AB0633350E6708B300189B09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0633340E6708B200189B09 /* CoreGraphics.framework */; };
 		AB0633CF0E670E8C00189B09 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0633CE0E670E8C00189B09 /* Icon.png */; };
-		AB6399A40E674EE800001069 /* settingsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = AB6399A30E674EE800001069 /* settingsHeader.png */; };
+		AB639A940E675BA400001069 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AB639A930E675BA400001069 /* Default.png */; };
+		AB639A960E675BAD00001069 /* settingsHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = AB639A950E675BAD00001069 /* settingsHeader.png */; };
+		AB639AAE0E675DA300001069 /* libPinchMediaAnalyticsDevice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB639AAB0E675DA300001069 /* libPinchMediaAnalyticsDevice.a */; };
+		AB639AAF0E675DA300001069 /* libPinchMediaAnalyticsSimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB639AAD0E675DA300001069 /* libPinchMediaAnalyticsSimulator.a */; };
+		AB639AB80E675E1700001069 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB639AB70E675E1700001069 /* libsqlite3.0.dylib */; };
+		AB639ABA0E675E2200001069 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB639AB90E675E2200001069 /* CoreLocation.framework */; };
+		AB639ABE0E675E2900001069 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB639ABD0E675E2900001069 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +50,14 @@
 		AB06332A0E67083900189B09 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		AB0633340E6708B200189B09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AB0633CE0E670E8C00189B09 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		AB6399A30E674EE800001069 /* settingsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsHeader.png; sourceTree = "<group>"; };
+		AB639A930E675BA400001069 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AB639A950E675BAD00001069 /* settingsHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsHeader.png; sourceTree = "<group>"; };
+		AB639AAB0E675DA300001069 /* libPinchMediaAnalyticsDevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPinchMediaAnalyticsDevice.a; sourceTree = "<group>"; };
+		AB639AAC0E675DA300001069 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
+		AB639AAD0E675DA300001069 /* libPinchMediaAnalyticsSimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPinchMediaAnalyticsSimulator.a; sourceTree = "<group>"; };
+		AB639AB70E675E1700001069 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		AB639AB90E675E2200001069 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AB639ABD0E675E2900001069 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +68,11 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				AB0633350E6708B300189B09 /* CoreGraphics.framework in Frameworks */,
+				AB639AAE0E675DA300001069 /* libPinchMediaAnalyticsDevice.a in Frameworks */,
+				AB639AAF0E675DA300001069 /* libPinchMediaAnalyticsSimulator.a in Frameworks */,
+				AB639AB80E675E1700001069 /* libsqlite3.0.dylib in Frameworks */,
+				AB639ABA0E675E2200001069 /* CoreLocation.framework in Frameworks */,
+				AB639ABE0E675E2900001069 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +82,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AB639AB60E675DCE00001069 /* pinchmedia */,
 				AB639A830E6759A500001069 /* controllers */,
 				AB639A820E67599C00001069 /* table_view_cells */,
 				1D3623240D0F684500981E51 /* nametagAppDelegate.h */,
@@ -89,6 +108,9 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				AB06330A0E6704F200189B09 /* Settings.bundle */,
+				AB639AB70E675E1700001069 /* libsqlite3.0.dylib */,
+				AB639AB90E675E2200001069 /* CoreLocation.framework */,
+				AB639ABD0E675E2900001069 /* SystemConfiguration.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -106,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				AB0633CE0E670E8C00189B09 /* Icon.png */,
-				AB6399A30E674EE800001069 /* settingsHeader.png */,
+				AB639A930E675BA400001069 /* Default.png */,
+				AB639A950E675BAD00001069 /* settingsHeader.png */,
 				2899E5210DE3E06400AC0155 /* nametagViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				AB06332A0E67083900189B09 /* SettingsView.xib */,
@@ -143,6 +166,16 @@
 				AB0633200E67065D00189B09 /* SettingsController.m */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		AB639AB60E675DCE00001069 /* pinchmedia */ = {
+			isa = PBXGroup;
+			children = (
+				AB639AAB0E675DA300001069 /* libPinchMediaAnalyticsDevice.a */,
+				AB639AAC0E675DA300001069 /* Beacon.h */,
+				AB639AAD0E675DA300001069 /* libPinchMediaAnalyticsSimulator.a */,
+			);
+			name = pinchmedia;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +225,8 @@
 				AB06330B0E6704F200189B09 /* Settings.bundle in Resources */,
 				AB06332B0E67083900189B09 /* SettingsView.xib in Resources */,
 				AB0633CF0E670E8C00189B09 /* Icon.png in Resources */,
-				AB6399A40E674EE800001069 /* settingsHeader.png in Resources */,
+				AB639A940E675BA400001069 /* Default.png in Resources */,
+				AB639A960E675BAD00001069 /* settingsHeader.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +258,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = nametag_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes\"",
+				);
 				PRODUCT_NAME = nametag;
 			};
 			name = Debug;
@@ -236,6 +274,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = nametag_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes\"",
+				);
 				PRODUCT_NAME = nametag;
 			};
 			name = Release;
