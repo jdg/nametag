@@ -12,7 +12,7 @@
 
 @implementation nametagViewController
 
-@synthesize hello, mynameis, name, infoButton;
+@synthesize hello, mynameis, name, infoButton, tagColors;
 
 - (void)showSettingsScreen
 {
@@ -50,6 +50,16 @@
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];  
 	name.text = [userDefaults stringForKey:@"name"];
+
+	current_color_index = 0;
+	
+	if ([userDefaults integerForKey:@"current_color_index"] == nil) {
+		NSLog(@"Current color index is nil.");
+		current_color_index = 0;
+	} else {
+		NSLog(@"Color index is: %d", [userDefaults integerForKey:@"current_color_index"]);
+		current_color_index = [userDefaults integerForKey:@"current_color_index"];
+	}
 }
 
 - (void)action:(id)sender
@@ -65,11 +75,17 @@
 	[infoButton addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
 
 	[self.view addSubview:infoButton];
+
+	NSLog(@"Setting up self.tagColors..");
+	self.tagColors = [NSArray arrayWithObjects:[UIColor redColor], [UIColor blueColor], [UIColor greenColor],
+					   [UIColor cyanColor], [UIColor brownColor], [UIColor purpleColor], [UIColor orangeColor],
+					   [UIColor grayColor], nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	NSLog(@"viewWillAppear");
 	[self setupLabels];
+	[self updateBackgroundColor];
 	[super viewWillAppear:animated];
 }
 
@@ -78,7 +94,7 @@
 
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];  
 	name.text = [userDefaults stringForKey:@"name"];
-	
+
 	if ([userDefaults stringForKey:@"name"] == nil || [[userDefaults stringForKey:@"name"] isEqualToString:@""]) {
 		NSLog(@"Displaying settings screen.");
 		[self showSettingsScreen];
@@ -97,12 +113,43 @@
 
 - (void)didReceiveMemoryWarning {
 	NSLog(@"%@ %@", self, NSStringFromSelector(_cmd));
-	[super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-	// Release anything that's not essential, such as cached data
+	[super didReceiveMemoryWarning];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSLog(@"touchesBegan - color index: %d", current_color_index);
+
+	current_color_index = current_color_index + 1;
+	NSLog(@"We have XYZ self.tagColors: %d", [self.tagColors count]);
+
+	if (current_color_index >= [self.tagColors count]) {
+		NSLog(@"Resetting color index.");
+		current_color_index = 0;
+	}
+
+	
+	NSLog(@"Resetting color index.");
+	NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
+	NSLog(@"Resetting color index.");
+	if (standardUserDefaults) {
+		NSLog(@"Setting string to %d", current_color_index);
+		[standardUserDefaults setInteger:current_color_index forKey:@"current_color_index"];
+		[standardUserDefaults synchronize];
+	}
+
+	[self updateBackgroundColor];
 }
 
 
+- (void)updateBackgroundColor
+{
+	NSLog(@"updateBackgroundColor");
+	self.view.backgroundColor = [self.tagColors objectAtIndex:current_color_index];
+}
+
 - (void)dealloc {
+	[self.tagColors release];
 	[super dealloc];
 }
 

@@ -64,7 +64,6 @@
 
 - (void)dealloc {
 	[saveButton release];
-	[headerLabel release];
 	[super dealloc];
 }
 

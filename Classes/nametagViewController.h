@@ -14,6 +14,10 @@
 	IBOutlet UILabel *name;
 
 	UIButton *infoButton;
+
+	int current_color_index;
+
+	NSArray *tagColors;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *hello;
@@ -21,5 +25,9 @@
 @property (nonatomic, retain) IBOutlet UILabel *name;
 
 @property (nonatomic, retain) UIButton *infoButton;
+
+@property (nonatomic, retain) NSArray *tagColors;
+
+- (void)updateBackgroundColor;
 
 @end
