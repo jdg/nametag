@@ -12,7 +12,7 @@
 
 @implementation nametagViewController
 
-@synthesize hello, mynameis, name, infoButton, tagColors;
+@synthesize hello, mynameis, name, infoButton, tagColors, nameButton;
 
 - (void)showSettingsScreen
 {
@@ -47,7 +47,14 @@
 	mynameis.adjustsFontSizeToFitWidth = YES;
 	name.font = [UIFont fontWithName:@"Marker Felt" size:36.0];
 	name.adjustsFontSizeToFitWidth = YES;
+	name.userInteractionEnabled = YES;
 
+	nameButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+	nameButton.frame = name.frame;
+	nameButton.backgroundColor = [UIColor clearColor];
+	[nameButton addTarget:self	action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];	
+	[self.view addSubview:nameButton];
+	
 	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];  
 	name.text = [userDefaults stringForKey:@"name"];
 
@@ -64,17 +71,13 @@
 
 - (void)action:(id)sender
 {
-	NSLog(@"infoButton clicked.");
+	NSLog(@"Button clicked.");
 	[self showSettingsScreen];
 }
 
 - (void)viewDidLoad {
 	NSLog(@"Creating info button.");
-	infoButton = [[UIButton buttonWithType:UIButtonTypeInfoLight] retain];
-	infoButton.backgroundColor = [UIColor clearColor];
 	[infoButton addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
-
-	[self.view addSubview:infoButton];
 
 	NSLog(@"Setting up self.tagColors..");
 	self.tagColors = [NSArray arrayWithObjects:[UIColor redColor], [UIColor blueColor], [UIColor greenColor],
